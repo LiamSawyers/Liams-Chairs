@@ -45,42 +45,92 @@
         }
       </style>
     </head>
+    <body>
     
-        <body>
-
-            <header>
-              <h1>Liam's Chairs!</h1>
-            </header>
+      <header>
+        <h1>Liam's Chairs!</h1>
+      </header>
+    
+      <main id="product-container">
+        <div class="product" id="product1">
+            <model-viewer src="./models/chair-blue.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1">
+                <button class="Hotspot" slot="hotspot-1" data-position="-0.4147518877386902m 4.394411422349582m 7.823579455338356m" data-normal="0.8955872588365964m 0.3571079798346508m -0.26532499420138705m" data-visibility-attribute="visible">
+                    <div class="HotspotAnnotation">Unique Synthetic Leather Blend</div>
+                </button>
+                <div class="progress-bar hide" slot="progress-bar">
+                    <div class="update-bar"></div>
+                </div>
+                <button slot="ar-button" id="ar-button">
+                    View in your space
+                </button>
+                <div id="ar-prompt">
+                    <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+                </div>
+            </model-viewer>
+          <h2>Synthetic Leather Chair</h2>
+          <p>Exclusive Synthetic Leather</p>
+          <p>Price: $240.00 CAD</p>
+          <button>Add to Cart</button>
+        </div>
+    
+        <div class="product" id="product2">
+            <model-viewer src="./models/black_leather_chair.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1">
+                <button class="Hotspot" slot="hotspot-1" data-position="-0.19075873105053567m 0.6897768666345593m 0.0254191410556351m" data-normal="0.9412738032213904m 0.22150513552985743m 0.25483151748368704m" data-visibility-attribute="visible">
+                    <div class="HotspotAnnotation">100% Real Italian Leather</div>
+                </button>
+                <div class="progress-bar hide" slot="progress-bar">
+                    <div class="update-bar"></div>
+                </div>
+                <button slot="ar-button" id="ar-button">
+                    View in your space
+                </button>
+                <div id="ar-prompt">
+                    <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+                </div>
+            </model-viewer>
+          <h2>Black Leather Chair</h2>
+          <p>100% Real Italian Leather</p>
+          <p>Price: $350.00 CAD</p>
+          <button>Add to Cart</button>
+        </div>
+    
+        <div class="product" id="product3">
+            <model-viewer src="./models/Olos-Chair.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1">
+                <button class="Hotspot" slot="hotspot-1" data-position="-0.19768412866151452m 0.6674763773189349m 0.011662144180397904m" data-normal="0.9857305932125126m 0.16023495350885805m -0.05157477366816437m" data-visibility-attribute="visible">
+                    <div class="HotspotAnnotation">The Perfect Size for Kids!</div>
+                </button>
+                <div class="progress-bar hide" slot="progress-bar">
+                    <div class="update-bar"></div>
+                </div>
+                <button slot="ar-button" id="ar-button">
+                    View in your space
+                </button>
+                <div id="ar-prompt">
+                    <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+                </div>
+            </model-viewer>
+          <h2>Deluxe Kids Chair</h2>
+          <p>Made from Plastic and Synthetic Leather </p>
+          <p>Price: $120.00</p>
+          <button>Add to Cart</button>
+        </div>
+      </main>
+    
+      <script src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+      <script>
+        function loadModel(modelPath) {
+          const productViewer = document.createElement('model-viewer');
+          productViewer.src = modelPath;
+          productViewer.alt = 'Product model';
+          productViewer.style.width = '300px';
+          productViewer.style.height = '300px';
+          productViewer.setAttribute('ar', 'true');
           
-            <main id="product-container">
-              <div class="product">
-                <model-viewer src="./models/chair-blue.glb" alt="Product 1" camera-controls ar ar-modes="webxr scene-viewer quick-look" style="width: 300px; height: 300px;"></model-viewer>
-                <h2>Synthetic Leather Chair</h2>
-                <p>Exclusive Synthetic Leather</p>
-                <p>Price: $240.00 CAD</p>
-                <button>Add to Cart</button>
-              </div>
-          
-              <div class="product">
-                <model-viewer src="./models/black_leather_chair.gltf" alt="Product 2" camera-controls ar ar-modes="webxr scene-viewer quick-look" style="width: 300px; height: 300px;"></model-viewer>
-                <h2>Black Leather Chair</h2>
-                <p>100% Real Italian Leather</p>
-                <p>Price: $350.00 CAD</p>
-                <button>Add to Cart</button>
-              </div>
-          
-              <div class="product">
-                <model-viewer src="./models/Olos-Chair.glb" alt="Product 3" camera-controls ar ar-modes="webxr scene-viewer quick-look" style="width: 300px; height: 300px;"></model-viewer>
-                <h2>Deluxe Kids Chair</h2>
-                <p>Made from Plastic and Synthetic Leather </p>
-                <p>Price: $120.00</p>
-                <button>Add to Cart</button>
-              </div>
-            </main>
-          
-            <script src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-          </body>
-          </html>
+          const productContainer = document.getElementById('product-container');
+          productContainer.appendChild(productViewer);
+        }
+      </script>
+    </body>
     </html>
     
     
