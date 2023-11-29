@@ -116,19 +116,15 @@
         </div>
       </main>
     
-      <script src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-      <script>
-        function loadModel(modelPath) {
-          const productViewer = document.createElement('model-viewer');
-          productViewer.src = modelPath;
-          productViewer.alt = 'Product model';
-          productViewer.style.width = '300px';
-          productViewer.style.height = '300px';
-          productViewer.setAttribute('ar', 'true');
-          
-          const productContainer = document.getElementById('product-container');
-          productContainer.appendChild(productViewer);
-        }
+      <script> var myModels = ["/models/chair-blue.glb", "/models/black_leather_chair.gltf", "/models/Olos-Chair.glb",]
+      var counter = 0;
+      document.getElementById("change-colour").addEventListener("click", function() {
+          counter++;
+          if (counter==3) { 
+              counter = 0;
+          }
+          document.getElementById("model").src = myModels[counter];
+      });
       </script>
     </body>
     </html>
