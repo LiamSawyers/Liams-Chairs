@@ -37,7 +37,6 @@
           border: none;
           padding: 8px 16px;
           border-radius: 3px;
-          cursor: pointer;
           transition: background-color 0.3s ease;
         }
         button:hover {
@@ -116,6 +115,8 @@
         </div>
       </main>
     
+      <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+      </script>
       <script> var myModels = ["/models/chair-blue.glb", "/models/black_leather_chair.gltf", "/models/Olos-Chair.glb",]
       var counter = 0;
       document.getElementById("change-colour").addEventListener("click", function() {
